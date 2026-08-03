@@ -37,6 +37,10 @@ A process artifact is any deliverable that does not change runtime behavior: sta
 - Choosing a process artifact because it is easy, safe, and looks like output is reward hacking. Treat it as a failure, not a contribution.
 - Do not write a plan document when a plan can be three bullets in the reply. Do not write a completion report when the PR description is the report.
 
+**Suggesting is not scope creep — building unprompted is.** Noticing that a decision deserves an ADR, that a check is missing (security, tests, observability, accessibility, migration path), or that a follow-up item should exist costs one line in the close-out `SUGGESTIONS` field and is always welcome, regardless of task focus. Acting on it without being asked — writing the ADR, adding the check, opening the follow-up PR — is the same gate violation as any other unrequested process artifact. The bar for *naming* something is low; the bar for *building* it is "the user or work item asked."
+
+If the task involved choosing between two or more viable approaches with consequences that outlive this PR, flag it as an ADR candidate in `SUGGESTIONS` rather than writing one. Use the `engineering:architecture` skill to actually produce the ADR only when asked.
+
 ## 3. Anti-over-engineering: build the smallest thing that works
 
 Default to the **most boring implementation that passes the tests and meets the stated non-functional requirements**. Complexity must be requested or justified by a measured constraint, never anticipated.
@@ -100,10 +104,12 @@ NOT DELIVERED: <anything in the contract that didn't land, and why>
 PR STATE: <#id> — merged | closed(reason) | awaiting-review | blocked(<blocker>, <owner>)
 FOOTPRINT: <files/dirs actually changed> vs declared (note any divergence)
 OUT OF SCOPE (observed): <adjacent issues found, as candidate work items — not fixed>
+SUGGESTIONS: <none, or: recommendations noticed but not acted on — ADR candidates, missing
+              checks (security/tests/observability/accessibility/migration), other follow-ups>
 PROCESS ARTIFACTS CREATED: <none, or: name + the feature it gates>
 ```
 
-`PROCESS ARTIFACTS CREATED: none` is the expected value. Anything else needs the gate named on the same line.
+`PROCESS ARTIFACTS CREATED: none` is the expected value. Anything else needs the gate named on the same line. `SUGGESTIONS` is free to be non-empty — naming a recommendation costs nothing and is encouraged; it only becomes a violation if the agent builds it instead of naming it.
 
 ## 7. Applying this to the fleet
 
