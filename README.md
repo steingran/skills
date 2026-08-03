@@ -15,6 +15,7 @@ Each directory is one skill: a `SKILL.md` with YAML frontmatter (`name`, `descri
 | `dotnet-pr-review` | Structured .NET/C# and TypeScript PR review, with a diff-access decision tree |
 | `implementation-handoff` | Self-contained implementation briefs for a fresh Claude Code session or agent |
 | `eu-jurisdiction-vet` | CLOUD Act / GDPR / data-residency vetting of vendors, models, and hosting |
+| `simplified-technical-english` | Plain, jargon-free technical writing — no invented abbreviations, short sentences, one word per meaning |
 
 ## Layout
 
