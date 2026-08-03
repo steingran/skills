@@ -9,6 +9,8 @@ Each directory is one skill: a `SKILL.md` with YAML frontmatter (`name`, `descri
 | Skill | Purpose |
 |---|---|
 | `delivery-discipline` | Scope contracts, anti-over-engineering rules, and PR lifecycle enforcement for GPT-5.6-family agents |
+| `gather-suggestions` | Roll up delivery-discipline `SUGGESTIONS` entries from a GitHub issue and its sub-issues into one comment |
+| `implement-suggestions` | Turn one gathered suggestion into a tracked work item and implement it via delivery-discipline |
 | `paperclip-routine-author` | Routine design, agent assignment, and fleet configuration for Paperclip AI |
 | `dotnet-pr-review` | Structured .NET/C# and TypeScript PR review, with a diff-access decision tree |
 | `implementation-handoff` | Self-contained implementation briefs for a fresh Claude Code session or agent |
