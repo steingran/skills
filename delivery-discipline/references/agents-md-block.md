@@ -27,6 +27,12 @@ when it is a hard gate for a named feature, and name that feature. An item that
 gates nothing does not get created. Process/ops items are capped at ~5% of open
 items. Picking process work because it is easy and low-risk is reward hacking.
 
+Suggesting is not scope creep — building unprompted is. Noticing that a decision
+deserves an ADR, or that a check is missing (security, tests, observability,
+accessibility, migration path), costs one line in the close-out `SUGGESTIONS`
+field and is always welcome. Acting on it without being asked is the same gate
+violation as any other unrequested process artifact.
+
 **Smallest thing that works.** Do not add an interface with one implementation,
 an abstraction layer for one caller, config for a value that never varied,
 retry/caching/pooling with no stated target, a new dependency the framework
@@ -50,8 +56,10 @@ delivery: implementing only the refusal path earns partial credit, never closes
 a feature item, and is labeled `refusal-only` with a follow-up item.
 
 **Close-out.** End every task with: DELIVERED / NOT DELIVERED / PR STATE /
-FOOTPRINT vs declared / OUT OF SCOPE (observed) / PROCESS ARTIFACTS CREATED.
-The expected value of the last line is "none".
+FOOTPRINT vs declared / OUT OF SCOPE (observed) / SUGGESTIONS / PROCESS ARTIFACTS
+CREATED. The expected value of the last line is "none"; `SUGGESTIONS` is free to
+be non-empty — it only becomes a violation if the agent builds the suggestion
+instead of naming it.
 ```
 
 ---
@@ -66,6 +74,8 @@ The expected value of the last line is "none".
       for a never-varying value, or unrequested dependency
 - [ ] No process artifact created, or the gated feature is named
 - [ ] No adjacent refactoring; issues found are listed as candidate items, not fixed here
+- [ ] Recommendations noticed but out of scope (ADR candidates, missing checks) are named
+      in `SUGGESTIONS`, not built
 - [ ] Exactly one PR for this item; no open sibling PR touching the same paths
 - [ ] PR ends in a terminal state: merged / closed(reason) / awaiting-review (CI green,
       no unresolved comments) / blocked(blocker, owner)
@@ -89,9 +99,11 @@ values that never varied, no new dependencies the framework covers, no refactori
 of adjacent code, no plan or status documents.
 
 Check my open PRs on this repo before creating a new one — if one touches the same
-paths, push to that branch instead. End with the PR in a terminal state and emit a
-close-out block: DELIVERED / NOT DELIVERED / PR STATE / FOOTPRINT vs declared /
-OUT OF SCOPE (observed) / PROCESS ARTIFACTS CREATED.
+paths, push to that branch instead. If you notice something worth doing but out of
+scope — an ADR-worthy decision, a missing check — name it, don't build it. End with
+the PR in a terminal state and emit a close-out block: DELIVERED / NOT DELIVERED /
+PR STATE / FOOTPRINT vs declared / OUT OF SCOPE (observed) / SUGGESTIONS /
+PROCESS ARTIFACTS CREATED.
 ```
 
 ---
