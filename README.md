@@ -1,6 +1,6 @@
 # skills
 
-Claude skills for .NET architecture work, multi-agent development with Paperclip, and EU-regulatory venture validation.
+Claude skills for .NET architecture work, multi-agent development with Paperclip, and EU-regulatory vendor vetting.
 
 Each directory is one skill: a `SKILL.md` with YAML frontmatter (`name`, `description`) and optional `references/` loaded on demand.
 
