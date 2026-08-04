@@ -19,7 +19,7 @@ The rule that matters most for AI-generated text: **never coin an abbreviation, 
 6. **Noun clusters ≤ 3 words.** "database connection pool timeout" is at the edge; "distributed database connection pool timeout retry handler config" is not readable — break it up or use a short sentence instead.
 7. **Don't drop words to sound terse.** Keep the subject, verb, and article. Telegraphic style ("Config missing, retry fails, check logs") reads as cryptic, not concise.
 8. **One topic per paragraph**, roughly six sentences max. Use a vertical list the moment a sentence starts enumerating steps or conditions.
-9. **Cut hedge-and-inflate filler.** Words like "leverage," "utilize," "seamless," "robust," "delve," "unlock," "streamline" almost always have a shorter plain synonym ("use," "smooth," "solid," "look into," "enable," "simplify"). See [references/watchlist.md](references/watchlist.md) for the full swap list and before/after examples.
+9. **Cut hedge-and-inflate filler.** Words like "leverage," "utilize," "seamless," "robust," "delve," "unlock," "streamline" almost always have a shorter plain synonym ("use," "smooth," "solid," "look into," "enable," "simplify"). See [references/watchlist.md](https://github.com/steingran/skills/blob/main/simplified-technical-english/references/watchlist.md) for the full swap list and before/after examples.
 
 ## Self-check before sending technical text
 
