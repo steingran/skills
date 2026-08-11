@@ -1,6 +1,6 @@
 # skills
 
-Claude skills for .NET architecture work, multi-agent development with Paperclip, and EU-regulatory vendor vetting.
+Claude skills for .NET architecture and testing work, multi-agent development with Paperclip, and EU-regulatory vendor vetting.
 
 Each directory is one skill: a `SKILL.md` with YAML frontmatter (`name`, `description`) and optional `references/` loaded on demand.
 
@@ -16,13 +16,16 @@ Each directory is one skill: a `SKILL.md` with YAML frontmatter (`name`, `descri
 | `implementation-handoff` | Self-contained implementation briefs for a fresh Claude Code session or agent |
 | `eu-jurisdiction-vet` | CLOUD Act / GDPR / data-residency vetting of vendors, models, and hosting |
 | `simplified-technical-english` | Plain, jargon-free technical writing — no invented abbreviations, short sentences, one word per meaning |
+| `playwright-dotnet` | Browser automation and UI testing from .NET with Microsoft.Playwright — throwaway scripts, or suites on TUnit/NUnit/MSTest/xUnit |
 
 ## Layout
 
 ```
 <skill-name>/
 ├── SKILL.md          # frontmatter + instructions, kept under ~500 lines
-└── references/       # loaded only when SKILL.md points at them
+├── references/       # loaded only when SKILL.md points at them
+├── scripts/          # optional: helper scripts invoked as black boxes, not read into context
+└── examples/         # optional: runnable samples the skill points at
 ```
 
 ## Conventions
