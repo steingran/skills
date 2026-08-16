@@ -2,6 +2,21 @@
 
 Mechanics for keeping 15–25 concurrent PRs from turning into a graveyard. Defaults below; tune per repo with the user.
 
+## Delivery lane and review gate
+
+Bind each PR to one implementation issue. Keep corrections, blockers, ownership, and PR follow-through in that issue.
+
+If a separate review issue is required, create it once as a leaf under the implementation issue and reuse it for the life of the PR. Record each round in the same issue with the head SHA, result, findings, and next action. A new head SHA requires a new review round, not a new review issue.
+
+When a round fails:
+
+1. Record the findings in the existing review issue.
+2. Return the parent implementation issue to active work.
+3. Fix the same branch and PR.
+4. Record the new SHA and rerun the same review issue.
+
+Do not create fix, retest, evidence, wake-up, relay, handoff, escalation, or status-only issues. A replacement review issue is allowed only after the existing one is closed or cancelled and both records are linked.
+
 ## Staleness ladder
 
 Age is measured from the **last commit**, not from PR creation. A comment does not reset the clock; a push does.
@@ -23,7 +38,7 @@ Add these to the fleet label/marker registry to avoid collisions with existing a
 - `stale:decide` — decision required from owner
 - `closed:stale` — closed by sweeper, work item reopened
 - `blocked:external` — exempt from ladder, requires blocker + owner in the PR body
-- `refusal-only` — only the refusal/error path implemented; feature item stays open
+- `refusal-only` — only the refusal/error path implemented; the same feature item stays open
 - `scope:overrun` — diff left the declared footprint (new subsystems/projects pulled in); needs split or explicit human sign-off
 - `supersedes:<pr-number>` / marker comment `<!-- SUPERSEDES:#123 -->` — machine-detectable supersede link
 
